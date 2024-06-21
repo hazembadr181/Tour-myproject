@@ -472,6 +472,7 @@ header .drop_menu ul li .signup:hover{
     outline: none;
     border-color: var(--main-color);
 }
+.payment .contanier form input:not(:placeholder-shown)~label,
 .payment .contanier form input:focus~label{
     opacity: 1;
     top: -25px;
