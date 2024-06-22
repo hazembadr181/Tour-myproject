@@ -243,6 +243,7 @@ header .drop_menu ul li .signup:hover{
     }
     
 }
+
 /* end Header */
 /* start landing */
 .landing{
@@ -332,15 +333,30 @@ header .drop_menu ul li .signup:hover{
 .buttons{
     display: none;
 }
-.landing video{
+.landing .video{
+    position: relative;
     width: 100%;
-    height: 100vh;
+    height: 105vh;
+}
+.landing video{
+    /* position: absolute; */
+    width:110%;
+    height: auto;
+}
+@media (min-width:768px) and (max-width:992px){
+    .landing{
+        height: 70vh;
+        overflow: hidden;
+    }
+    .landing .box .text{
+        top: 35%;
+    }
 }
 /* end landing */
 /* start search */
-/* .search{
+.search{
     overflow: hidden;
-} */
+}
 .search .contanier{
     background-color: transparent;
     position: absolute;
@@ -353,7 +369,7 @@ header .drop_menu ul li .signup:hover{
     left: 15%;
     padding: 15px;
     box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    /* width: max-content; */
+    width: max-content;
 }
 .search .contanier .section{
     border: 1px solid var(--main-color);
@@ -394,9 +410,23 @@ header .drop_menu ul li .signup:hover{
 
  /*  responsive search*/
 /* medium */
-@media (max-width:1200px){
-    .search{
-        display: none;
+@media (min-width:992px) and (max-width:1200px){
+    .search .contanier{
+        width: max-content;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .search .contanier .section input{
+        width: 50%;
+    }
+}
+@media (min-width:768px) and (max-width:992px){
+    .search .contanier{
+        width: fit-content;
+        left: 3%; 
+    }
+    .search .contanier .section input{
+        width: 25%;
     }
 }
 /* end search */
@@ -541,17 +571,16 @@ header .drop_menu ul li .signup:hover{
     background-color: transparent;
 }
 /* end services */
+
 /* start footer */
 footer{
-    position: relative;
-    margin-top: 208rem;
+    position:relative;
     background-color: var(--color-black);
-    height: 70vh;
-
+    height: 70vh;  
+    margin-top: 210rem;
 }
 footer .contanier{
-    /* width: fit-content; */
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -562,7 +591,7 @@ footer .contanier::after{
     position: absolute;
     width: 90%;
     height: 1px;
-    bottom: 20px;
+    bottom: 10px;
     margin: 0 auto;
     left: 5%;
     background-color: var(--color-gray);
@@ -597,7 +626,7 @@ footer .contanier .info .payment{
     align-items: center;
     gap: 20px;
     margin-right: 10px;
-    margin-bottom: 10px;
+    margin-top: -10px;
 }
 footer .contanier .info .payment img{
     width: 85px;
@@ -649,6 +678,7 @@ footer .contanier .contact{
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    flex-basis: 25%;
 }
 footer .contanier .contact .contactus{
     padding: 3px 30px;
@@ -701,6 +731,7 @@ footer .copyright{
     left: 45%;
     bottom: 0;
     transform: translate((-50%,-50%));
+    
 }
 footer .copyright .right{
     display: flex;
@@ -721,8 +752,52 @@ footer .copyright span{
     color: var(--main-color);
     opacity: 1;
 }
+@media(min-width:992px) and (max-width:1200px){
+    footer{
+        margin-top: 380rem;
+    }
+    footer .contanier .contact{
+        margin-left: 25px;
+    }
+    footer .contanier .info{
+        margin-right: 7px;
+    }
+    footer .contanier .contact .contactus{
+        width: max-content;
+    }
 
-
+}
+@media (min-width:768px) and (max-width:991px){
+    footer{
+        height: max-content;
+        margin-top: 380rem;
+    }
+    footer .contanier{
+        flex-direction: column;
+    }
+    footer .contanier .info{
+        width: 100%;
+    }
+    footer .contanier .links,
+    footer .contanier .contact{
+        margin-left: -600px;
+        margin-bottom: 10px;
+    }
+    footer .contanier .contact{
+        margin-bottom: 40px;
+    }
+    footer .contanier .links::before{
+        display: none;
+    }
+    footer .contanier::after{
+        bottom: 65px;
+        width: 90%;
+        left: 7%;
+    }
+    footer .contanier .copyright{
+        /* margin-top: 50px; */
+    }
+}
 /* end footer */
 /* start About-Us */
 .about{
@@ -870,6 +945,7 @@ footer .copyright span{
     flex-direction: column;
     padding: 0 40px;
     height: 100%;
+    
 }
 
 .container input{
